@@ -16,7 +16,7 @@ Dark green: #28b485
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 60px;
+  font-size: 16px;
   line-height: 1.7;
   color: white;
   padding: 30px;
@@ -25,8 +25,9 @@ body {
 .header {
   position: relative;
   height: 95vh;
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
-    url(../img/hero.jpg);
+  background-image: url(../img/hero.jpg);
+  /*background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
+    url(../img/hero.jpg);*/
   background-size: cover;
   background-position: top;
   /*切畫面mask*/
@@ -43,18 +44,27 @@ body {
   height: 35px;
 }
 
+.logo:hover {
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
 .text-box {
   position: absolute;
   /*垂直置中*/
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .head-primary {
   color: white;
   /*統一大寫*/
   text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .head-primary-main {
@@ -62,6 +72,10 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+  /*header字體動畫*/
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
 }
 
 .head-primary-sub {
@@ -69,4 +83,66 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.4px;
+  /*header字體動畫*/
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*按鈕樣式動態製作*/
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 100px;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
 }
