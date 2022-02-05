@@ -16,18 +16,57 @@ Dark green: #28b485
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 60px;
   line-height: 1.7;
-  color: #777;
+  color: white;
   padding: 30px;
 }
 
 .header {
+  position: relative;
   height: 95vh;
   background-image: linear-gradient(to right bottom, #7ed56f, #28b485),
     url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
-
+  /*切畫面mask*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  /*垂直置中*/
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.head-primary {
+  color: white;
+  /*統一大寫*/
+  text-transform: uppercase;
+}
+
+.head-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+}
+
+.head-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
 }
