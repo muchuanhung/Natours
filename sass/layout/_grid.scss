@@ -10,7 +10,6 @@
 
   .col-1-of-2 {
     float: left;
-    background-color: red;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
     }
