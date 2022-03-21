@@ -17,7 +17,6 @@
   }
 
   .col-1-of-3 {
-    background-color: orangered;
     float: left;
     width: calc((100% -2 - #{$gutter-horizontal}) / 3);
   }
